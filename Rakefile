@@ -1,7 +1,7 @@
 desc "compile and run the site"
 task :default do
   pids = [
-    spawn("jekyll serve --watch"),
+    spawn("jekyll serve --watch --baseurl ''"),
     spawn("scss --watch assets")
   ]
  

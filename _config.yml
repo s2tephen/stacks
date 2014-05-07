@@ -1,5 +1,6 @@
 name: Stacks
 exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock"]
 permalink: /cards/:categories/:title/
+baseurl: /stacks
 gems:
   - jekyll-redirect-from
