@@ -7,7 +7,7 @@ cardnum:  1
 author:   "Zack Beauchamp"
 authurl:  "http://www.vox.com/authors/zack-beauchamp"
 date:     2014-04-30 15:23:00
-redirect_from: "/benghazi-ambassador-stevens-attack"
+redirect_from: "/cards/benghazi-ambassador-stevens-attack/index.html"
 ---
 
 When people talk about Benghazi now, they don't just mean the major city in Eastern Libya: they're referring to an attack on US diplomatic and intelligence facilities there on September 11th, 2012. That night, armed militants overwhelmed security at the US mission and killed Ambassador to Libya J. Christopher Stevens, State Department Information Management Officer Sean Smith, and diplomatic security agents Tyrone Woods and Glen Doherty.
