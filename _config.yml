@@ -1,0 +1,3 @@
+name: Stacks
+pygments: true
+exclude: ["vendor"]
