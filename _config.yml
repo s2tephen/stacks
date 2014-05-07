@@ -1,3 +1,5 @@
 name: Stacks
-pygments: true
-exclude: ["vendor"]
+exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock"]
+permalink: /cards/:categories/:title/
+gems:
+  - jekyll-redirect-from

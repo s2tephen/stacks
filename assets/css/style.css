@@ -1,0 +1,186 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400italic,700italic,400,700,900);
+body {
+  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  margin: 0 0 20px; }
+
+p {
+  margin: 0 0 20px;
+  font-size: 1.2em; }
+
+h2 {
+  font-weight: 900;
+  line-height: 1.1; }
+
+h1 {
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 2em; }
+
+a {
+  color: #39c;
+  font-weight: 400;
+  text-decoration: none; }
+
+body {
+  background-color: #eee; }
+
+nav {
+  background-color: #ddd; }
+
+header, .cardnav.top {
+  background-color: #fff200; }
+
+article {
+  background-color: #fff; }
+
+@media (max-width: 767px) {
+  aside {
+    display: none !important; } }
+@media (max-width: 991px) {
+  .nav-inner, section {
+    *zoom: 1;
+    width: auto;
+    max-width: 1410px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    .nav-inner:before, .nav-inner:after, section:before, section:after {
+      content: '';
+      display: table; }
+    .nav-inner:after, section:after {
+      clear: both; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-inner, section {
+    *zoom: 1;
+    width: auto;
+    max-width: 970px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    .nav-inner:before, .nav-inner:after, section:before, section:after {
+      content: '';
+      display: table; }
+    .nav-inner:after, section:after {
+      clear: both; } }
+@media (min-width: 1200px) {
+  .nav-inner, section {
+    *zoom: 1;
+    width: auto;
+    max-width: 1170px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    .nav-inner:before, .nav-inner:after, section:before, section:after {
+      content: '';
+      display: table; }
+    .nav-inner:after, section:after {
+      clear: both; } }
+body {
+  margin: 0; }
+
+nav {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 40px; }
+  nav .nav-inner h1 {
+    display: inline;
+    line-height: 40px; }
+  nav .nav-inner .nav-share {
+    float: right;
+    line-height: 40px; }
+
+section aside {
+  *zoom: 1;
+  float: left;
+  display: inline;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%; }
+  section aside:before, section aside:after {
+    content: '';
+    display: table; }
+  section aside:after {
+    clear: both; }
+  section aside:last-child {
+    margin-right: 0%; }
+  section aside header {
+    padding: 40px 20px; }
+    section aside header p {
+      font-size: 0.8em;
+      letter-spacing: 0.5px;
+      margin-bottom: 0;
+      text-transform: uppercase; }
+  section aside .sidebar {
+    padding: 20px;
+    margin: 0; }
+    section aside .sidebar li {
+      margin-bottom: 20px; }
+      section aside .sidebar li:last-child {
+        margin-bottom: 0; }
+section article {
+  *zoom: 1;
+  float: left;
+  display: inline;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+  box-sizing: border-box;
+  padding: 80px;
+  margin-bottom: 40px;
+  position: relative; }
+  section article:before, section article:after {
+    content: '';
+    display: table; }
+  section article:after {
+    clear: both; }
+  section article:last-child {
+    margin-right: 0%; }
+  section article .cardnav {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase; }
+    section article .cardnav.top {
+      top: 0; }
+    section article .cardnav.bot {
+      bottom: 0;
+      border-top: 1px solid #ccc; }
+  section article p:last-child {
+    margin-bottom: 0; }

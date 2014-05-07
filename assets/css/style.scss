@@ -1,0 +1,145 @@
+@import 'jeet/index';
+@import url(https://fonts.googleapis.com/css?family=Lato:400italic,700italic,400,700,900);
+
+// Typography
+body {
+  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  margin: 0 0 20px;
+}
+
+p {
+  margin: 0 0 20px;
+  font-size: 1.2em;
+}
+
+h2 {
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+h1 {
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 2em;
+}
+
+a {
+  color:#39c;
+  font-weight:400;
+  text-decoration:none;
+}
+
+// Color
+body {
+  background-color: #eee;
+}
+
+nav {
+  background-color: #ddd;
+}
+
+header, .cardnav.top {
+  background-color: #fff200;
+}
+
+article {
+  background-color: #fff;
+}
+
+// Layout
+@media (max-width: 767px) {
+  aside {
+    display: none !important;
+  }
+}
+@media (max-width: 991px) {
+  .nav-inner, section {
+    @include center();
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-inner, section {
+    @include center(970px);
+  }
+}
+@media (min-width: 1200px) {
+  .nav-inner, section {
+    @include center(1170px);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 40px;
+  .nav-inner {
+    h1 {
+      display: inline;
+      line-height: 40px;
+    }
+    .nav-share {
+      float: right;
+      line-height: 40px;
+    }
+  }
+}
+
+section {
+  aside {
+    @include column(1/4);
+    header {
+      padding: 40px 20px;
+      p {
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+    }
+    .sidebar {
+      padding: 20px;
+      margin: 0;
+      li {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  article {
+    @include column(3/4);
+    box-sizing: border-box;
+    padding: 80px;
+    margin-bottom: 40px;
+    position: relative;
+    .cardnav {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      left: 0;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      &.top {
+        top: 0;
+      }
+      &.bot {
+        bottom: 0;
+        border-top: 1px solid #ccc;
+      }
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

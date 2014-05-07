@@ -1,0 +1,14 @@
+<aside>
+  <header>
+    <h2>{% if page.stack %}{{ page.stack }}{% else %}{{ site.name }}{% endif %}</h2>
+    {% if page.author %}
+      <p>By {% if page.authurl %}<a href="{{ page.authurl }}">{% endif %}{{ page.author }}{% if page.authurl %}</a>{% endif %}</p>
+    {% endif %}
+    <p>Last updated {{ page.date | date: "%b %-d, %Y" }}</p>
+  </header>
+  <ol class="sidebar">
+    {% for post in site.categories[page.category] reversed %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ol>
+</aside>

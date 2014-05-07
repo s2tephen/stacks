@@ -7,24 +7,34 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+        <title>Why did the US have a diplomatic presence in Benghazi?</title>
+        <description>&lt;p&gt;Benghazi is Libya’s second-largest city, and is the capital of Cyrenaica (the country’s eastern region). The city was the epicenter of protests against Libyan dictator Muammar Qaddafi during the 2011 Arab Spring uprising and subsequently served as the de facto headquarters of the anti-Qaddafi rebellion. In fact, it was Qaddafi’s near-reconquest of Benghazi that prompted the Western intervention in the Libyan civil war on March 18th, 2011. That intervention, roughly a month after the anti-Qaddafi uprising began, ended after Western-supported rebel forces took the capital of Libya, Tripoli, on August 22nd of that year. Tripoli was Qaddafi’s final stand, and his regime collapsed after its fall.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;Given Benghazi’s “cradle of the revolution” status, the US believed it needed to maintain a mission there to keep up with local politics and key members of the revolution it had supported.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Apr 2014 11:23:00 -0400</pubDate>
+        <link>/cards/benghazi-ambassador-stevens-attack/why-benghazi-mission/</link>
+        <guid isPermaLink="true">/cards/benghazi-ambassador-stevens-attack/why-benghazi-mission/</guid>
+      </item>
+    
+      <item>
+        <title>What was the Benghazi attack?</title>
+        <description>&lt;p&gt;When people talk about Benghazi now, they don’t just mean the major city in Eastern Libya: they’re referring to an attack on US diplomatic and intelligence facilities there on September 11th, 2012. That night, armed militants overwhelmed security at the US mission and killed Ambassador to Libya J. Christopher Stevens, State Department Information Management Officer Sean Smith, and diplomatic security agents Tyrone Woods and Glen Doherty.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Immediately afterwards, U.S. intelligence officials and the Obama Administration concluded that the attacks grew out of a nearby mob that was protesting an anti-Islam film, The Innocence of Muslims. This conclusion, the CIA later decided, was wrong: the people initially believed to be protesters were actually a loose group of Islamic militants who had shown up at the mission with the intent to attack it.&lt;/p&gt;
+
+&lt;p&gt;The attack spawned a still-ongoing investigation led by Congressional Republicans and conservative media, who worry that the Obama administration has self-servingly distorted the truth of what happened and who see the incident as evidence of their long-running concerns that the administration is weak on terrorism.&lt;/p&gt;
+
+&lt;p&gt;This investigation has centered around three different questions: whether the Benghazi mission was sufficiently protected, whether the US failed to stop the attack when it could have, and whether the administration covered up the truth about the attack’s origins.&lt;/p&gt;
+
+&lt;p&gt;The first reflects a real problem for American foreign policy. Though critics have alleged that the answers to the latter two questions involve serious administration misconduct, successive investigations have not supported these accusations.&lt;/p&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 07 May 2014 09:39:53 -0400</pubDate>
-        <link>/jekyll/update/2014/05/07/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/jekyll/update/2014/05/07/welcome-to-jekyll.html</guid>
+        <pubDate>Wed, 30 Apr 2014 11:23:00 -0400</pubDate>
+        <link>/cards/benghazi-ambassador-stevens-attack/benghazi-basics/</link>
+        <guid isPermaLink="true">/cards/benghazi-ambassador-stevens-attack/benghazi-basics/</guid>
       </item>
     
   </channel>
