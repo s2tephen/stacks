@@ -97,4 +97,28 @@
       $('body').addClass('menu-open');
     }
   });
+
+  // swipe through cards
+  $('article').on('swipe', function(evt) {
+    var target;
+    var dir;
+    if (evt.swipestop.coords[0] - evt.swipestart.coords[0] >= 75) {
+      target = $('.arrow-left:not(.hidden)').attr('href');
+      dir = 'right';
+    }
+    else if (evt.swipestop.coords[0] - evt.swipestart.coords[0] <= -75) {
+      target = $('.arrow-right:not(.hidden)').attr('href');
+      dir = 'left';
+    }
+    if (target) {
+      switchCards(target, dir);
+      window.history.pushState({path: target}, '', target);
+      if (dir == 'right') {
+        $('.active').removeClass('active').parent().prev().find('a').addClass('active');
+      }
+      else {
+        $('.active').removeClass('active').parent().next().find('a').addClass('active');
+      }
+    }
+  });
 })();

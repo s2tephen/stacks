@@ -107,7 +107,10 @@ article {
     background-color: rgba(255, 255, 255, 0);
     pointer-events: none;
     position: absolute;
-    top: -20px; }
+    top: -20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
     aside header, aside ol {
       position: relative;
       left: -9999em; }
@@ -208,7 +211,7 @@ nav {
   height: 40px;
   margin-bottom: 40px; }
   nav .nav-inner h1 {
-    display: inline;
+    float: left;
     line-height: 40px; }
   nav .nav-inner .hamburger {
     display: none; }
@@ -228,7 +231,10 @@ section {
     padding-right: 0;
     width: 22.75%;
     margin-left: 0%;
-    margin-right: 3%; }
+    margin-right: 3%;
+    -webkit-box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05); }
     section aside:before, section aside:after {
       content: '';
       display: table; }
@@ -268,7 +274,10 @@ section {
     padding: 80px;
     margin-bottom: 40px;
     margin-right: 0;
-    position: relative; }
+    position: relative;
+    -webkit-box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.05); }
     section article:before, section article:after {
       content: '';
       display: table; }

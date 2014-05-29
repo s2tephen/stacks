@@ -125,6 +125,9 @@ article {
     pointer-events: none;
     position: absolute;
     top: -20px;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
     header, ol {
       position: relative;
       left: -9999em;
@@ -207,7 +210,7 @@ nav {
   margin-bottom: 40px;
   .nav-inner {
     h1 {
-      display: inline;
+      float: left;
       line-height: 40px;
     }
     .hamburger {
@@ -224,6 +227,9 @@ section {
   position: relative;
   aside {
     @include column(1/4);
+    -webkit-box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
+       -moz-box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
+            box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
     header {
       padding: 40px 20px;
       p {
@@ -253,6 +259,9 @@ section {
     margin-bottom: 40px;
     margin-right: 0;
     position: relative;
+    -webkit-box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
+       -moz-box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
+            box-shadow: 2px 2px 1px 0 rgba(0,0,0,0.05);
     &.offscreen {
       position: absolute;
       top: 0;

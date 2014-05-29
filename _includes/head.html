@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{% if page.stack %}{{ page.stack }}{% else %}{{ page.title }}{% endif %}</title>
+    {% if page.start %}
+      <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/{{ page.path | replace: 'index.html',page.start }}">
+    {% endif %}
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
