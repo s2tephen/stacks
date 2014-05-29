@@ -1,14 +1,22 @@
 <aside>
   <header>
-    <h2>{% if page.stack %}{{ page.stack }}{% else %}{{ site.name }}{% endif %}</h2>
+    <h2>{% if page.stack %}{{ page.stack }}{% else %}{{ page.title }}{% endif %}</h2>
     {% if page.author %}
       <p>By {% if page.authurl %}<a href="{{ page.authurl }}">{% endif %}{{ page.author }}{% if page.authurl %}</a>{% endif %}</p>
     {% endif %}
-    <p>Last updated {{ page.date | date: "%b %-d, %Y" }}</p>
+    {% if page.date %}
+      <p>Last updated {{ page.date | date: "%b %-d, %Y" }}</p>
+    {% endif %}
   </header>
   <ol class="sidebar">
-    {% for post in site.categories[page.category] reversed %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% assign cards = site.categories[page.category] %}
+    {% assign stacksize = cards | size %}
+    {% for n in (1..stacksize) %} 
+      {% for card in cards %}
+        {% if card.cardnum == n %}
+          <li><a id="cardlink-{{ n }}" {% if n == page.cardnum %}class="active"{% endif %} href="{{ site.baseurl }}{{ card.url }}">{{ card.title }}</a></li>
+        {% endif %}
+      {% endfor %}
     {% endfor %}
   </ol>
 </aside>

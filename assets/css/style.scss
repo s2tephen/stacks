@@ -14,24 +14,53 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0 0 20px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.6em;
 }
 
 h2 {
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.1em;
 }
 
 h1 {
   font-weight: 300;
-  text-transform: lowercase;
   font-size: 2em;
 }
 
 a {
-  color:#39c;
-  font-weight:400;
-  text-decoration:none;
+  color: #39c;
+  font-weight: 400;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+     -moz-transition: color 0.3s;
+          transition: color 0.3s;
+  &.active {
+    color: #000;
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.sidebar li a {
+  color: #999;
+  &.active {
+    color: #fff200;
+    &:hover {
+      color: #fff200;
+    }
+  }
+  &:hover {
+    color: #39c;
+  }
+}
+
+.cardnav a {
+  color: #999;
+  &:hover {
+    color: #39c;
+  }
 }
 
 // Color
@@ -47,22 +76,112 @@ header, .cardnav.top {
   background-color: #fff200;
 }
 
+.sidebar {
+  background-color: #333;
+}
+
 article {
   background-color: #fff;
 }
 
 // Layout
 @media (max-width: 767px) {
+  nav {
+    margin-bottom: 20px !important;
+    .nav-inner {
+      padding: 0 20px;
+      h1 {
+        float: left;
+      }
+      .hamburger {
+        display: block !important;
+        float: left;
+        margin-top: 12px;
+        margin-left: 12px;
+        &:hover {
+          cursor: pointer;
+        }
+        .bar {
+          background-color: #000;
+          display: block;
+          width: 25px;
+          height: 2px;
+          border-radius: 1px;
+          margin-top: 5px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
   aside {
-    display: none !important;
+    -webkit-transition: background 0.15s;
+       -moz-transition: background 0.15s;
+            transition: background 0.15s;
+    width: 100% !important;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    position: absolute;
+    top: -20px;
+    header, ol {
+      position: relative;
+      left: -9999em;
+    }
+  }
+  article {
+    width: 90% !important;
+    margin-left: 5% !important;
+    margin-bottom: 20px !important;
+    padding: 60px 40px !important;
+    &.onscreen {
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  .menu-open {
+    overflow-y: hidden;
+    aside {
+      height: 100%;
+      pointer-events: auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      header, ol {
+        -webkit-animation: moveFromLeft .45s ease-in-out both;
+           -moz-animation: moveFromLeft .45s ease-in-out both;
+                animation: moveFromLeft .45s ease-in-out both;
+        box-sizing: border-box;
+        width: 80%;
+        left: 0px;
+      }
+      .sidebar {
+        height: 100%;
+      }
+    }
+  }
+
+  .menu-close {
+    aside header, aside ol {
+      -webkit-animation: moveToLeft .45s ease-in-out both;
+         -moz-animation: moveToLeft .45s ease-in-out both;
+              animation: moveToLeft .45s ease-in-out both;
+    }
   }
 }
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  nav {
+    margin-bottom: 20px !important;
+  }
   .nav-inner, section {
-    @include center();
+    @include center(750px);
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  nav {
+    margin-bottom: 30px !important;
+  }
   .nav-inner, section {
     @include center(970px);
   }
@@ -73,8 +192,13 @@ article {
   }
 }
 
+html, body, section {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 nav {
@@ -86,6 +210,9 @@ nav {
       display: inline;
       line-height: 40px;
     }
+    .hamburger {
+      display: none;
+    }
     .nav-share {
       float: right;
       line-height: 40px;
@@ -94,6 +221,7 @@ nav {
 }
 
 section {
+  position: relative;
   aside {
     @include column(1/4);
     header {
@@ -106,40 +234,144 @@ section {
       }
     }
     .sidebar {
-      padding: 20px;
+      height: 300px;
+      overflow: auto;
+      padding: 20px 20px 20px 20px;
       margin: 0;
       li {
+        margin-left: 15px;
         margin-bottom: 20px;
-        &:last-child {
-          margin-bottom: 0;
-        }
       }
     }
   }
   article {
     @include column(3/4);
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 80px;
     margin-bottom: 40px;
+    margin-right: 0;
     position: relative;
-    .cardnav {
+    &.offscreen {
       position: absolute;
-      width: 100%;
-      height: 40px;
-      left: 0;
-      line-height: 40px;
-      text-align: center;
-      text-transform: uppercase;
-      &.top {
-        top: 0;
-      }
-      &.bot {
-        bottom: 0;
-        border-top: 1px solid #ccc;
-      }
+      top: 0;
+      right: 9999em;
     }
-    p:last-child {
-      margin-bottom: 0;
+    .card {
+      .cardnav {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        left: 0;
+        line-height: 30px;
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-transform: uppercase;
+        &.top {
+          top: 0;
+        }
+        &.bot {
+          bottom: 0;
+          border-top: 1px solid #ccc;
+        }
+        a {
+          height: 100%;
+          padding: 0 10px;
+          &:hover {
+            cursor: pointer;
+          }
+          &.arrow-left {
+            float: left;
+          }
+          &.arrow-right {
+            float: right;
+          }
+          &.hidden {
+            visibility: hidden;
+          }
+        }
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
+}
+
+// Animations
+aside, article {
+  &.to-left {
+    z-index: -1;
+    -webkit-animation: moveToLeft .45s ease-in-out both;
+       -moz-animation: moveToLeft .45s ease-in-out both;
+            animation: moveToLeft .45s ease-in-out both;
+  }
+  &.to-right {
+    z-index: -1;
+    -webkit-animation: moveToRight .45s ease-in-out both;
+       -moz-animation: moveToRight .45s ease-in-out both;
+            animation: moveToRight .45s ease-in-out both;
+  }
+  &.from-left {
+    z-index: -1;
+    -webkit-animation: moveFromLeft .45s ease-in-out both;
+       -moz-animation: moveFromLeft .45s ease-in-out both;
+            animation: moveFromLeft .45s ease-in-out both;
+  }
+  &.from-right {
+    z-index: -1;
+    -webkit-animation: moveFromRight .45s ease-in-out both;
+       -moz-animation: moveFromRight .45s ease-in-out both;
+            animation: moveFromRight .45s ease-in-out both;
+  }
+}
+
+@-webkit-keyframes moveToLeft {
+  to { opacity: 0; -webkit-transform: translateX(-100%); }
+}
+
+@-moz-keyframes moveToLeft {
+  to { opacity: 0; -moz-transform: translateX(-100%); }
+}
+
+@keyframes moveToLeft {
+  to { opacity: 0; transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRight {
+  to { opacity: 0; -webkit-transform: translateX(100%); }
+}
+
+@-moz-keyframes moveToRight {
+  to { opacity: 0; -moz-transform: translateX(100%); }
+}
+
+@keyframes moveToRight {
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromLeft {
+  from { opacity: 0; -webkit-transform: translateX(-100%); }
+}
+
+@-moz-keyframes moveFromLeft {
+  from { opacity: 0; -moz-transform: translateX(-100%); }
+}
+
+@keyframes moveFromLeft {
+  from { opacity: 0; transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromRight {
+  from { opacity: 0; -webkit-transform: translateX(100%); }
+}
+
+@-moz-keyframes moveFromRight {
+  from { opacity: 0; -moz-transform: translateX(100%); }
+}
+
+@keyframes moveFromRight {
+  from { opacity: 0; transform: translateX(100%); }
 }

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign url = page.url | split: '/' %}
+{% assign stack = url[2] %}
+{% assign cards = site.categories[stack] %}
+{% for card in cards %}
+  {% if card.cardnum == 1 %}
+    {% assign target = card.url %}
+  {% endif %}
+{% endfor %}
+<script type="text/javascript">
+  window.location = "{{ target }}";
+</script>

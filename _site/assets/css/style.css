@@ -22,21 +22,42 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0 0 20px;
-  font-size: 1.2em; }
+  font-size: 1.1em;
+  line-height: 1.6em; }
 
 h2 {
   font-weight: 900;
-  line-height: 1.1; }
+  line-height: 1.1em; }
 
 h1 {
   font-weight: 300;
-  text-transform: lowercase;
   font-size: 2em; }
 
 a {
   color: #39c;
   font-weight: 400;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s; }
+  a.active {
+    color: #000; }
+    a.active:hover {
+      cursor: default; }
+
+.sidebar li a {
+  color: #999; }
+  .sidebar li a.active {
+    color: #fff200; }
+    .sidebar li a.active:hover {
+      color: #fff200; }
+  .sidebar li a:hover {
+    color: #39c; }
+
+.cardnav a {
+  color: #999; }
+  .cardnav a:hover {
+    color: #39c; }
 
 body {
   background-color: #eee; }
@@ -47,17 +68,88 @@ nav {
 header, .cardnav.top {
   background-color: #fff200; }
 
+.sidebar {
+  background-color: #333; }
+
 article {
   background-color: #fff; }
 
 @media (max-width: 767px) {
+  nav {
+    margin-bottom: 20px !important; }
+    nav .nav-inner {
+      padding: 0 20px; }
+      nav .nav-inner h1 {
+        float: left; }
+      nav .nav-inner .hamburger {
+        display: block !important;
+        float: left;
+        margin-top: 12px;
+        margin-left: 12px; }
+        nav .nav-inner .hamburger:hover {
+          cursor: pointer; }
+        nav .nav-inner .hamburger .bar {
+          background-color: #000;
+          display: block;
+          width: 25px;
+          height: 2px;
+          border-radius: 1px;
+          margin-top: 5px; }
+          nav .nav-inner .hamburger .bar:first-child {
+            margin-top: 0; }
+
   aside {
-    display: none !important; } }
-@media (max-width: 991px) {
+    -webkit-transition: background 0.15s;
+    -moz-transition: background 0.15s;
+    transition: background 0.15s;
+    width: 100% !important;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    position: absolute;
+    top: -20px; }
+    aside header, aside ol {
+      position: relative;
+      left: -9999em; }
+
+  article {
+    width: 90% !important;
+    margin-left: 5% !important;
+    margin-bottom: 20px !important;
+    padding: 60px 40px !important; }
+    article.onscreen {
+      top: 0;
+      left: 0;
+      position: absolute; }
+
+  .menu-open {
+    overflow-y: hidden; }
+    .menu-open aside {
+      height: 100%;
+      pointer-events: auto;
+      background-color: rgba(255, 255, 255, 0.7); }
+      .menu-open aside header, .menu-open aside ol {
+        -webkit-animation: moveFromLeft .45s ease-in-out both;
+        -moz-animation: moveFromLeft .45s ease-in-out both;
+        animation: moveFromLeft .45s ease-in-out both;
+        box-sizing: border-box;
+        width: 80%;
+        left: 0px; }
+      .menu-open aside .sidebar {
+        height: 100%; }
+
+  .menu-close aside header, .menu-close aside ol {
+    -webkit-animation: moveToLeft .45s ease-in-out both;
+    -moz-animation: moveToLeft .45s ease-in-out both;
+    animation: moveToLeft .45s ease-in-out both; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  nav {
+    margin-bottom: 20px !important; }
+
   .nav-inner, section {
     *zoom: 1;
     width: auto;
-    max-width: 1410px;
+    max-width: 750px;
     float: none;
     display: block;
     margin-right: auto;
@@ -70,6 +162,9 @@ article {
     .nav-inner:after, section:after {
       clear: both; } }
 @media (min-width: 992px) and (max-width: 1199px) {
+  nav {
+    margin-bottom: 30px !important; }
+
   .nav-inner, section {
     *zoom: 1;
     width: auto;
@@ -101,8 +196,12 @@ article {
       display: table; }
     .nav-inner:after, section:after {
       clear: both; } }
+html, body, section {
+  height: 100%; }
+
 body {
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 nav {
   width: 100%;
@@ -111,76 +210,171 @@ nav {
   nav .nav-inner h1 {
     display: inline;
     line-height: 40px; }
+  nav .nav-inner .hamburger {
+    display: none; }
   nav .nav-inner .nav-share {
     float: right;
     line-height: 40px; }
 
-section aside {
-  *zoom: 1;
-  float: left;
-  display: inline;
-  clear: none;
-  text-align: inherit;
-  padding-left: 0;
-  padding-right: 0;
-  width: 22.75%;
-  margin-left: 0%;
-  margin-right: 3%; }
-  section aside:before, section aside:after {
-    content: '';
-    display: table; }
-  section aside:after {
-    clear: both; }
-  section aside:last-child {
-    margin-right: 0%; }
-  section aside header {
-    padding: 40px 20px; }
-    section aside header p {
+section {
+  position: relative; }
+  section aside {
+    *zoom: 1;
+    float: left;
+    display: inline;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    section aside:before, section aside:after {
+      content: '';
+      display: table; }
+    section aside:after {
+      clear: both; }
+    section aside:last-child {
+      margin-right: 0%; }
+    section aside header {
+      padding: 40px 20px; }
+      section aside header p {
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        margin-bottom: 0;
+        text-transform: uppercase; }
+    section aside .sidebar {
+      height: 300px;
+      overflow: auto;
+      padding: 20px 20px 20px 20px;
+      margin: 0; }
+      section aside .sidebar li {
+        margin-left: 15px;
+        margin-bottom: 20px; }
+  section article {
+    *zoom: 1;
+    float: left;
+    display: inline;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 74.25%;
+    margin-left: 0%;
+    margin-right: 3%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 80px;
+    margin-bottom: 40px;
+    margin-right: 0;
+    position: relative; }
+    section article:before, section article:after {
+      content: '';
+      display: table; }
+    section article:after {
+      clear: both; }
+    section article:last-child {
+      margin-right: 0%; }
+    section article.offscreen {
+      position: absolute;
+      top: 0;
+      right: 9999em; }
+    section article .card .cardnav {
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      left: 0;
+      line-height: 30px;
       font-size: 0.8em;
       letter-spacing: 0.5px;
-      margin-bottom: 0;
+      text-align: center;
       text-transform: uppercase; }
-  section aside .sidebar {
-    padding: 20px;
-    margin: 0; }
-    section aside .sidebar li {
-      margin-bottom: 20px; }
-      section aside .sidebar li:last-child {
-        margin-bottom: 0; }
-section article {
-  *zoom: 1;
-  float: left;
-  display: inline;
-  clear: none;
-  text-align: inherit;
-  padding-left: 0;
-  padding-right: 0;
-  width: 74.25%;
-  margin-left: 0%;
-  margin-right: 3%;
-  box-sizing: border-box;
-  padding: 80px;
-  margin-bottom: 40px;
-  position: relative; }
-  section article:before, section article:after {
-    content: '';
-    display: table; }
-  section article:after {
-    clear: both; }
-  section article:last-child {
-    margin-right: 0%; }
-  section article .cardnav {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    left: 0;
-    line-height: 40px;
-    text-align: center;
-    text-transform: uppercase; }
-    section article .cardnav.top {
-      top: 0; }
-    section article .cardnav.bot {
-      bottom: 0;
-      border-top: 1px solid #ccc; }
-  section article p:last-child {
-    margin-bottom: 0; }
+      section article .card .cardnav.top {
+        top: 0; }
+      section article .card .cardnav.bot {
+        bottom: 0;
+        border-top: 1px solid #ccc; }
+      section article .card .cardnav a {
+        height: 100%;
+        padding: 0 10px; }
+        section article .card .cardnav a:hover {
+          cursor: pointer; }
+        section article .card .cardnav a.arrow-left {
+          float: left; }
+        section article .card .cardnav a.arrow-right {
+          float: right; }
+        section article .card .cardnav a.hidden {
+          visibility: hidden; }
+    section article .card p:last-of-type {
+      margin-bottom: 0; }
+
+aside.to-left, article.to-left {
+  z-index: -1;
+  -webkit-animation: moveToLeft .45s ease-in-out both;
+  -moz-animation: moveToLeft .45s ease-in-out both;
+  animation: moveToLeft .45s ease-in-out both; }
+aside.to-right, article.to-right {
+  z-index: -1;
+  -webkit-animation: moveToRight .45s ease-in-out both;
+  -moz-animation: moveToRight .45s ease-in-out both;
+  animation: moveToRight .45s ease-in-out both; }
+aside.from-left, article.from-left {
+  z-index: -1;
+  -webkit-animation: moveFromLeft .45s ease-in-out both;
+  -moz-animation: moveFromLeft .45s ease-in-out both;
+  animation: moveFromLeft .45s ease-in-out both; }
+aside.from-right, article.from-right {
+  z-index: -1;
+  -webkit-animation: moveFromRight .45s ease-in-out both;
+  -moz-animation: moveFromRight .45s ease-in-out both;
+  animation: moveFromRight .45s ease-in-out both; }
+
+@-webkit-keyframes moveToLeft {
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-100%); } }
+@-moz-keyframes moveToLeft {
+  to {
+    opacity: 0;
+    -moz-transform: translateX(-100%); } }
+@keyframes moveToLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-100%); } }
+@-webkit-keyframes moveToRight {
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100%); } }
+@-moz-keyframes moveToRight {
+  to {
+    opacity: 0;
+    -moz-transform: translateX(100%); } }
+@keyframes moveToRight {
+  to {
+    opacity: 0;
+    transform: translateX(100%); } }
+@-webkit-keyframes moveFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%); } }
+@-moz-keyframes moveFromLeft {
+  from {
+    opacity: 0;
+    -moz-transform: translateX(-100%); } }
+@keyframes moveFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); } }
+@-webkit-keyframes moveFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%); } }
+@-moz-keyframes moveFromRight {
+  from {
+    opacity: 0;
+    -moz-transform: translateX(100%); } }
+@keyframes moveFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); } }

@@ -1,13 +1,47 @@
 ---
 layout: default
 ---
-<article id="card">
-  <div class="cardnav top">
-    Card {{ page.cardnum }} of {{ site.categories[page.category].size }}
-  </div>
-  <h2>{{ page.title }}</h2>
-  {{ content }}
-  <div class="cardnav bot">
-    Share this card
+<article class="onscreen">
+  <div class="card card-{{ page.cardnum }}">
+    <div class="cardnav top">
+      {% assign cards = site.categories[page.category] %}
+      {% assign stacksize = cards | size %}
+      {% assign prevcard = page.cardnum | minus: 1 %}
+      {% assign nextcard = page.cardnum | plus: 1 %}
+      {% for card in cards %}
+        {% if card.cardnum == prevcard %}
+          {% assign prevcardurl = card.url %}
+        {% elsif card.cardnum == nextcard %}
+          {% assign nextcardurl = card.url %}
+        {% endif %}
+      {% endfor %}
+      {% if prevcardurl %}
+        <a href="{{ prevcardurl }}" class="arrow-left">&#65308;</a>
+      {% else %}
+        <a class="arrow-left hidden">&#65308;</a>
+      {% endif %}
+      Card {{ page.cardnum }} of {{ stacksize }}
+      {% if nextcardurl %}
+        <a href="{{ nextcardurl }}" class="arrow-right">&#65310;</a>
+      {% else %}
+        <a class="arrow-right hidden">&#65310;</a>
+      {% endif %}
+    </div>
+    <h2>{{ page.title }}</h2>
+    {{ content }}
+    <div class="cardnav bot">
+      {% if prevcardurl %}
+        <a href="{{ prevcardurl }}" class="arrow-left">&#65308;</a>
+      {% else %}
+        <a class="arrow-left hidden">&#65308;</a>
+      {% endif %}
+      Share this card
+      {% if nextcardurl %}
+        <a href="{{ nextcardurl }}" class="arrow-right">&#65310;</a>
+      {% else %}
+        <a class="arrow-right hidden">&#65310;</a>
+      {% endif %}
+    </div>
   </div>
 </article>
+<article class="offscreen"></article>
