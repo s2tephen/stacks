@@ -102,11 +102,11 @@
   $('article').on('swipe', function(evt) {
     var target;
     var dir;
-    if (evt.swipestop.coords[0] - evt.swipestart.coords[0] >= 20) {
+    if (evt.swipestop.coords[0] - evt.swipestart.coords[0] >= 75) {
       target = $('.arrow-left:not(.hidden)').attr('href');
       dir = 'right';
     }
-    else if (evt.swipestop.coords[0] - evt.swipestart.coords[0] <= -20) {
+    else if (evt.swipestop.coords[0] - evt.swipestart.coords[0] <= -75) {
       target = $('.arrow-right:not(.hidden)').attr('href');
       dir = 'left';
     }

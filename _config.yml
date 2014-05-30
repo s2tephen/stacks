@@ -1,5 +1,5 @@
 name: Stacks
-exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock"]
+exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock", "pretty_print.xsl"]
 permalink: /cards/:categories/:title/
 baseurl: /stacks
 markdown: kramdown

@@ -96,5 +96,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  nokogiri
   rake
   sass
