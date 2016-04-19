@@ -1,12 +1,30 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>{% if page.stack %}{{ page.stack }}{% else %}{{ page.title }}{% endif %}</title>
+  <title>{{ page.title }} {% if page.stack %}| {{ page.stack }} {% endif %}| {{ site.name }}</title>
   {% if page.start %}
-    <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/{{ page.path | replace: 'index.html',page.start }}">
+    <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/{{ page.path | replace: 'index.html', page.start }}">
   {% endif %}
+  <!-- TODO: <meta name="description" content="Page description. No longer than 155 characters."> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <meta name="twitter:card" content="summary"> 
+  <!-- TODO: <meta name="twitter:site" content="@publisher_handle">  -->
+  <meta name="twitter:title" content="{{ page.title }}"> 
+  <!-- TODO: <meta name="twitter:description" content="Page description less than 200 characters">  -->
+  <!-- TODO: <meta name="twitter:creator" content="@author_handle"> -->
+  <!-- TODO: <meta name="twitter:image" content=" http://www.example.com/image.jpg"> -->
+
+  <meta property="og:title" content="{{ page.title }}"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="{{ site.domain }}{{ site.baseurl }}{{ page.url }}">
+  <!-- TODO: <meta property="og:image" content=" http://example.com/image.jpg"> -->
+  <!-- TODO: <meta property="og:description" content="Description Here">  -->
+  <meta property="og:site_name" content="{{ site.name }}"> 
+  <!-- TODO: <meta property="fb:admins" content="Facebook numeric ID"> -->
+
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <!-- TODO: <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome/font-awesome.min.css"> -->
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->

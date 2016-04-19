@@ -1,5 +1,6 @@
 name: Stacks
-exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock", "pretty_print.xsl"]
+exclude: ["vendor", "Rakefile", "Gemfile", "Gemfile.lock", "pretty_print.xsl", "LICENSE", "README.md"]
 permalink: /cards/:categories/:title/
 baseurl: /stacks
 markdown: kramdown
+domain: http://s2tephen.github.io

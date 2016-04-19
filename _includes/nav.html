@@ -1,13 +1,19 @@
 <nav>
   <div class="nav-inner">
-    <h1>Stacks</h1>
+    <h1>populi</h1>
     <a class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </a>
-    <div class="nav-share">
-      share icons go here
-    </div>
+    {% if page.stack %}
+      <div class="nav-share">
+        Share this stack
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.domain }}{{ site.baseurl }}{{ page.url }}"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url={{ site.domain }}{{ site.baseurl }}{{ page.url }}&text={{ page.title }}"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url={{ site.domain }}{{ site.baseurl }}{{ page.url }}" onclick="javascript:window.open(this.href, '', 'height=600,width=600'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="javascript:window.print()"><i class="fa fa-print"></i></a>
+      </div>
+    {% endif %}
   </div>
 </nav>

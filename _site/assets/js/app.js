@@ -1,6 +1,6 @@
 (function() {
+  bindArrows();
   scrollSidebar();
-  bindCardNav();
 
   // load new card offscreen via AJAX, animate transition given direction
   function switchCards(target, dir1) {
@@ -9,13 +9,13 @@
     $('.onscreen').addClass('to-' + dir1);
     setTimeout(function() {
       $('.offscreen').load(target + ' .card', function() {
+        scrollSidebar();
         $(this).removeClass('offscreen').addClass('from-' + dir2).addClass('onscreen');
         $(this).siblings('article').removeClass('onscreen').addClass('offscreen').html('');
         setTimeout(function() {
           $('.offscreen').removeClass('to-' + dir1);
           $('.onscreen').removeClass('from-' + dir2);
-          bindCardNav();
-          scrollSidebar();
+          bindArrows();
         }, 600);
       });
     }, 300);
@@ -23,12 +23,15 @@
 
   // scroll sidebar to current card
   function scrollSidebar() {
-    return false;
+    var cardnum = Math.max(1, $('.offscreen').find('.card').attr('class').match('[0-9]+') - 1);
+    $('.sidebar').animate({
+      scrollTop: $('#cardlink-' + cardnum).offset().top - $('#cardlink-1').offset().top + 'px'
+    }, 300);
   }
 
   // load card via cardnav (needs to be rebound)
-  function bindCardNav() {
-    $('.cardnav a').click(function(evt) {
+  function bindArrows() {
+    $('.arrow').click(function(evt) {
       evt.preventDefault();
       var target = $(this).attr('href');
       var active = $('.active');

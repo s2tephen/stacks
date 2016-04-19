@@ -16,32 +16,41 @@ layout: default
         {% endif %}
       {% endfor %}
       {% if prevcardurl %}
-        <a href="{{ prevcardurl }}" class="arrow-left">&#65308;</a>
+        <a href="{{ prevcardurl }}" class="arrow arrow-left">&#65308;</a>
       {% else %}
-        <a class="arrow-left hidden">&#65308;</a>
+        <a class="arrow arrow-left hidden">&#65308;</a>
       {% endif %}
       Card {{ page.cardnum }} of {{ stacksize }}
       {% if nextcardurl %}
-        <a href="{{ nextcardurl }}" class="arrow-right">&#65310;</a>
+        <a href="{{ nextcardurl }}" class="arrow arrow-right">&#65310;</a>
       {% else %}
-        <a class="arrow-right hidden">&#65310;</a>
+        <a class="arrow arrow-right hidden">&#65310;</a>
       {% endif %}
     </div>
     <h2>{{ page.title }}</h2>
     {{ content }}
     <div class="cardnav bot">
       {% if prevcardurl %}
-        <a href="{{ prevcardurl }}" class="arrow-left">&#65308;</a>
+        <a href="{{ prevcardurl }}" class="arrow arrow-left">&#65308;</a>
       {% else %}
-        <a class="arrow-left hidden">&#65308;</a>
+        <a class="arrow arrow-left hidden">&#65308;</a>
       {% endif %}
       Share this card
+      <div class="social">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.domain }}{{ site.baseurl }}{{ page.url }}"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url={{ site.domain }}{{ site.baseurl }}{{ page.url }}&text={{ page.title }}"><i class="fa fa-twitter"></i></a>
+        <a href="https://plus.google.com/share?url={{ site.domain }}{{ site.baseurl }}{{ page.url }}" onclick="javascript:window.open(this.href, '', 'height=600,width=600'); return false;"><i class="fa fa-google-plus"></i></a>
+        <a href="javascript:window.print()"><i class="fa fa-print"></i></a>
+      </div>
       {% if nextcardurl %}
-        <a href="{{ nextcardurl }}" class="arrow-right">&#65310;</a>
+        <a href="{{ nextcardurl }}" class="arrow arrow-right">&#65310;</a>
       {% else %}
-        <a class="arrow-right hidden">&#65310;</a>
+        <a class="arrow arrow-right hidden">&#65310;</a>
       {% endif %}
     </div>
   </div>
 </article>
-<article class="offscreen"></article>
+<article class="offscreen">
+  <div class="card card-{{ page.cardnum }}">
+  </div>
+</article>
